@@ -192,3 +192,24 @@ passport.deserializeUser((user, cb) => {
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+// thử merge
+passport.deserializeUser((user, cb) => {
+  cb(null, user);
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});passport.deserializeUser((user, cb) => {
+  cb(null, user);
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});passport.deserializeUser((user, cb) => {
+  cb(null, user);
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
