@@ -83,7 +83,8 @@ app.post("/register", async (req, res) => {
 app.post("/login", async (req, res) => {
   const email = req.body.username;
   const loginPassword = req.body.password;
-  
+  console.log("email", email);
+  console.log("password", loginPassword);
   try {
   const result = await db.query("SELECT password FROM users WHERE email = $1", [email])
   // const storedHashedPassword = result.rows[0].password;
@@ -92,7 +93,12 @@ app.post("/login", async (req, res) => {
   } else {
     const user = result.rows[0];
     const storedHashedPassword = user.password;
+  console.log("storedHashedPassword", storedHashedPassword);
+
     const isMatch = bcrypt.compare(loginPassword, storedHashedPassword, (err, result) => {
+      // console.log("isMatch", isMatch);
+  console.log("result", result);
+
       if (err) {
         res.send(err)
         // res.send chỉ nhận một params
